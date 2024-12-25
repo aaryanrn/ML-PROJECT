@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Readmission Prediction</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Diabetes Admission Prediction</h1>
+        <form id="prediction-form">
+            <label for="mode">Prediction Mode:</label>
+            <select id="mode" name="mode" required>
+                <option value="general">General</option>
+                <option value="detailed">Detailed</option>
+            </select>
+
+            <div id="general-fields" class="input-group">
+                <h4 style="color: red;">Output is not accurate</h4>
+                <h2>General Features</h2>
+                <label for="general-gender">Gender:</label>
+                <select id="general-gender" name="gender" required>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
+
+                <label for="general-age">Age:</label>
+                <input type="number" id="general-age" name="age" required>
+
+                <label for="general-time_in_hospital">Time in Hospital (days):</label>
+                <input type="number" id="general-time_in_hospital" name="time_in_hospital" required>
+
+                <label for="general-num_lab_procedures">Number of Lab Procedures:</label>
+                <input type="number" id="general-num_lab_procedures" name="num_lab_procedures" required>
+                
+                <label for="general-insulin">Insulin:</label>
+                <select id="general-insulin" name="insulin" required>
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+            </div>
+
+            <div id="detailed-fields" class="input-group hidden">
+                <h2>Detailed Features</h2>
+            
+                <!-- Race Field -->
+                <label for="race">Race:</label>
+                <select id="race" name="race">
+                    <option value="2">Caucasian</option>
+                    <option value="1">African American</option>
+                    <option value="3">Hispanic</option>
+                    <option value="4">Other</option>
+                </select>
+            
+                <!-- Gender Field -->
+                <label for="detailed-gender">Gender:</label>
+                <select id="detailed-gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+            
+                <!-- Age Field -->
+                <label for="detailed-age">Age:</label>
+                <input type="number" id="detailed-age" name="age" value="50" min="1">
+            
+                <!-- Admission Type ID Field -->
+                <label for="admission_type_id">Admission Type ID:</label>
+                <input type="number" id="admission_type_id" name="admission_type_id" value="1" min="1" max="8">
+            
+                <!-- Discharge Disposition ID Field -->
+                <label for="discharge_disposition_id">Discharge Disposition ID:</label>
+                <input type="number" id="discharge_disposition_id" name="discharge_disposition_id" value="1" min="1" max="27">
+            
+                <!-- Admission Source ID Field -->
+                <label for="admission_source_id">Admission Source ID:</label>
+                <input type="number" id="admission_source_id" name="admission_source_id" value="7" min="1" max="25">
+            
+                <!-- Time in Hospital Field -->
+                <label for="detailed-time_in_hospital">Time in Hospital (Days):</label>
+                <input type="number" id="detailed-time_in_hospital" name="time_in_hospital" value="3">
+            
+                <!-- Number of Lab Procedures Field -->
+                <label for="detailed-num_lab_procedures">Number of Lab Procedures:</label>
+                <input type="number" id="detailed-num_lab_procedures" name="num_lab_procedures" value="1" min="0">
+            
+                <!-- Number of Procedures Field -->
+                <label for="num_procedures">Number of Procedures:</label>
+                <input type="number" id="num_procedures" name="num_procedures" value="0" min="0">
+            
+                <!-- Number of Medications Field -->
+                <label for="num_medications">Number of Medications:</label>
+                <input type="number" id="num_medications" name="num_medications" value="15" min="1">
+            
+                <!-- Number of Diagnoses Field -->
+                <label for="number_diagnoses">Number of Diagnoses:</label>
+                <input type="number" id="number_diagnoses" name="number_diagnoses" value="9" min="0">
+            
+                <!-- Metformin Field -->
+                <label for="metformin">Metformin:</label>
+                <select id="metformin" name="metformin">
+                    <option value="0">No</option>
+                    <option value="1">Steady</option>
+                    <option value="2">Up</option>
+                    <option value="3">Down</option>
+                </select>
+            
+                <!-- Insulin Field -->
+                <label for="insulin">Insulin:</label>
+                <select id="insulin" name="insulin">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            
+                <!-- Level 1 Diagnostic 1 Field -->
+                <label for="level1_diag_1">Level 1 Diagnostic 1:</label>
+                <select id="level1_diag_1" name="level1_diag_1">
+                    <option value="1">Circulatory</option>
+                    <option value="2">Respiratory</option>
+                    <option value="3">Digestive</option>
+                    <option value="4">Diabetes</option>
+                    <option value="5">Injury</option>
+                    <option value="6">Musculoskeletal</option>
+                    <option value="7">Genitourinary</option>
+                    <option value="8">Neoplasms</option>
+                    <option value="9">Other</option>
+                </select>
+            
+                <!-- Other fields that do not require mapping can be kept as input -->
+                <!-- For example: -->
+                <label for="change">Change:</label>
+                <input type="number" id="change" name="change" value="0">
+            
+                <label for="diabetesMed">Diabetes Med:</label>
+                <input type="number" id="diabetesMed" name="diabetesMed" value="1">
+            
+            </div>
+            <button type="submit">Predict</button>
+        </form>
+        <div id="result" class="result hidden"></div>
+    </div>
+
+    <script src="/static/script.js"></script>
+</body>
+</html>
