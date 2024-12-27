@@ -6,7 +6,7 @@ import numpy as np
 app = Flask(__name__)
 
 # Load the trained ML model
-model = joblib.load("final_model.joblib")
+model = joblib.load("final_model_compressed.joblib.gz")
 
 # Load the mappings from a JSON file
 def load_mappings():
