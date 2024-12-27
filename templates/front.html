@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Readmission Prediction - Home</title>
+    <style>
+        :root {
+            --primary-color: #2C5282;
+            --secondary-color: #4299E1;
+            --accent-color: #90CDF4;
+            --text-color: #2D3748;
+            --light-bg: #EBF8FF;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: var(--text-color);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(44, 82, 130, 0.95), rgba(44, 82, 130, 0.95)),
+                url('/api/placeholder/1920/600');
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            margin-top: 2rem;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: var(--primary-color);
+        }
+
+        .features {
+            padding: 4rem 2rem;
+            background-color: var(--light-bg);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+
+        .about {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .about h2 {
+            color: var(--primary-color);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 4rem 2rem;
+            line-height: 1.8;
+        }
+
+        footer h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+        }
+
+        footer ul {
+            margin-left: 1.5rem;
+            list-style-type: disc;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <section class="hero">
+        <h1>Diabetes Readmission Prediction Tool</h1>
+        <p>Advanced AI-powered prediction system to help healthcare providers assess patient readmission risk and
+            improve care outcomes for diabetic patients.</p>
+        <a href="{{ url_for('index') }}" class="cta-button">Start Prediction</a>
+    </section>
+
+    <section class="features">
+        <div class="features-grid">
+            <div class="feature-card">
+                <h3>General Assessment</h3>
+                <p>Quick evaluation using basic patient information including age, gender, and hospital stay duration.
+                    Perfect for initial risk screening.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Detailed Analysis</h3>
+                <p>Comprehensive assessment incorporating lab results, medications, and detailed patient history for
+                    more accurate predictions.</p>
+            </div>
+            <div class="feature-card">
+                <h3>Data-Driven Insights</h3>
+                <p>Leveraging machine learning algorithms trained on extensive healthcare data to provide reliable
+                    readmission risk predictions.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about">
+        <h2>About Our Prediction Tool</h2>
+        <p>The Diabetes Readmission Prediction Tool is designed to help healthcare providers make informed decisions
+            about patient care and follow-up strategies. By analyzing various patient parameters, our system calculates
+            the likelihood of hospital readmission within 30 days of discharge.</p>
+        <p>This tool considers multiple factors including:</p>
+        <ul>
+            <li>Admission Type ID, Discharge Disposition ID, and Admission Source ID are key indicators of the patient's
+                entry, exit, and referral details in the hospital.</li>
+            <li>Time in Hospital, Number of Lab Procedures, Procedures, and Medications reflect the patient's treatment
+                and healthcare usage during their stay.</li>
+            <li>Diabetes Med: Refers to whether the patient is prescribed specific diabetes-related medications like
+                Metformin or Insulin. Metformin is a common medication for type 2 diabetes, while Insulin is often
+                prescribed to manage blood sugar in type 1 or advanced type 2 diabetes.</li>
+            <li>Number of Diagnoses helps identify co-existing conditions that may influence the patient's treatment
+                plan.</li>
+            <li>Level 1 Diagnostic 1: Refers to the main diagnostic category of the patient's condition, which in this
+                case is Circulatory, suggesting a focus on heart or blood vessel-related health issues.</li>
+            <li>Change: Indicates any change in the patient's treatment or condition during their hospital stay, with
+                "0" representing no change.</li>
+        </ul>
+
+    </section>
+
+    <footer>
+        <h3>Background and Objectives</h3>
+        <p>Diabetes mellitus is a major chronic disease that results in readmissions due to poor disease control. Here
+            we established and compared machine learning (ML)-based readmission prediction methods to predict
+            readmission risks of diabetic patients.</p>
+
+        <h3>Methods</h3>
+        <p>The dataset analyzed in this study was acquired from the Health Facts Database, which includes over 100,000
+            records of diabetic patients from 1999 to 2008. After data preprocessing and normalization, multiple risk
+            factors in the dataset were examined for classifier training to predict the probability of readmission using
+            ML models. Various classifiers such as random forest, Logistic Regression, and decision tree ensemble were
+            compared to determine the best predictive model.</p>
+
+        <h3>Results</h3>
+        <p>A total of 100,244 records were included for model construction. Twenty-three attributes, including race,
+            sex, age, admission type, and drug use, were identified as significant modeling risk factors. The random
+            forest model achieved the highest performance with the best AUC score among all classifiers.</p>
+    </footer>
+</body>
+
+</html>

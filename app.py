@@ -69,8 +69,13 @@ IMPORTANT_FEATURES = [
 ]
 
 @app.route('/')
+def front():
+    return render_template('front.html')
+
+@app.route('/prediction')
 def index():
     return render_template('index.html')
+
 
 @app.route('/predict', methods=['POST'])
 def predict():
