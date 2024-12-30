@@ -1,5 +1,4 @@
 .vercel
 *.csv
 .__pycache__
-.final_model.joblib
 *.ipynb
