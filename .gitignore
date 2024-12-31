@@ -1,5 +1,3 @@
 .vercel
-*.csv
 .__pycache__
-*.ipynb
 .mlProject
