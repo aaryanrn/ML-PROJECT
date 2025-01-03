@@ -52,17 +52,9 @@ pip install -r requirements.txt
 ```
 
 ### Running the Code
-1. Preprocess the dataset:
+ To launch the app:
    ```bash
-   python preprocess.py
-   ```
-2. Train the model:
-   ```bash
-   python train.py
-   ```
-3. Evaluate the model:
-   ```bash
-   python evaluate.py
+   python app.py or flask run
    ```
 
 ## Results
