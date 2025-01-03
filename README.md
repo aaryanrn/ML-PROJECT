@@ -34,7 +34,7 @@ The dataset contains the following key features:
 
 ### 3. Model Training
 - Split the data into training and testing sets.
-- Trained machine learning models such as Logistic Regression, Random Forest, and Gradient Boosting.
+- Trained machine learning models such as Logistic Regression, Decision Tree, and Random Forest.
 - Evaluated models using metrics like accuracy, precision, recall, and F1-score.
 
 ## Usage
@@ -58,7 +58,7 @@ pip install -r requirements.txt
    ```
 
 ## Results
-- Achieved an F1-score of X on the test set.
+- Achieved an F1-score of 91% on the test set.
 - Key insights from the analysis:
   - Diagnosis codes and age are significant predictors of readmission.
   - Certain race groups showed higher readmission rates, indicating potential disparities.
